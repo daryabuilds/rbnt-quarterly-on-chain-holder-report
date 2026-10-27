@@ -61,7 +61,7 @@ The site is plain static files in `public/`. On Vercel, import this repository w
 
 ## Design
 
-Built on the Redbelly DAO Task Board brand kit (Kinetic Consensus): slate surfaces, one red accent, Be Vietnam Pro for text and JetBrains Mono for machine values. Animations respect the reader's reduced motion setting, and every chart has a table view.
+Built on the Redbelly DAO Task Board brand kit (Kinetic Consensus): slate surfaces, one red accent, Be Vietnam Pro for text and JetBrains Mono for machine values. Animations respect the reader's reduced motion setting, and every chart has a table view. The logo and favicon are transparent SVGs traced from the brand kit's master files; the favicon switches to light ink when the browser uses a dark theme.
 
 ## Disclaimer
 

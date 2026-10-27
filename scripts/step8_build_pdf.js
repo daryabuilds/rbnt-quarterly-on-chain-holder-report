@@ -13,7 +13,7 @@ const path = require("path");
 const { chromium } = require("playwright");
 
 const ROOT = path.join(__dirname, "..", "public");
-const TYPES = { ".html": "text/html", ".js": "text/javascript", ".css": "text/css", ".png": "image/png", ".json": "application/json", ".csv": "text/csv", ".md": "text/markdown", ".pdf": "application/pdf", ".xlsx": "application/octet-stream" };
+const TYPES = { ".html": "text/html", ".js": "text/javascript", ".css": "text/css", ".png": "image/png", ".json": "application/json", ".csv": "text/csv", ".md": "text/markdown", ".pdf": "application/pdf", ".xlsx": "application/octet-stream", ".svg": "image/svg+xml", ".ico": "image/x-icon" };
 
 function serve() {
   return new Promise((resolve) => {
