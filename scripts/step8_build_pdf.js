@@ -2,7 +2,7 @@
 
    Serves public/ on a local port, opens index.html?print=1 in Chromium
    (light theme, no animation, every table expanded) and saves:
-     public/downloads/RBNT-Holder-Report-Q3-2026.pdf
+     public/downloads/redbelly-holder.pdf
      public/assets/img/og-image.png   (1200 x 630 social card)
 
    Usage: node scripts/step8_build_pdf.js
@@ -13,6 +13,7 @@ const path = require("path");
 const { chromium } = require("playwright");
 
 const ROOT = path.join(__dirname, "..", "public");
+const PDF_NAME = "redbelly-holder.pdf";
 const TYPES = { ".html": "text/html", ".js": "text/javascript", ".css": "text/css", ".png": "image/png", ".json": "application/json", ".csv": "text/csv", ".md": "text/markdown", ".pdf": "application/pdf", ".xlsx": "application/octet-stream", ".svg": "image/svg+xml", ".ico": "image/x-icon" };
 
 function serve() {
@@ -41,7 +42,7 @@ function serve() {
   await page.evaluate(() => document.fonts.ready);
   await page.waitForTimeout(500);
   const label = report.meta.quarter.label;
-  const out = path.join(ROOT, "downloads", `RBNT-Holder-Report-${label.replace(/\s+/g, "-")}.pdf`);
+  const out = path.join(ROOT, "downloads", PDF_NAME);
   fs.mkdirSync(path.dirname(out), { recursive: true });
   await page.pdf({
     path: out,

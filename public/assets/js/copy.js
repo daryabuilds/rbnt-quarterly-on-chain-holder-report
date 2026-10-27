@@ -219,7 +219,7 @@
     ],
 
     downloads: [
-      { type: "PDF", title: "Full report", desc: "The complete report with charts and tables, A4.", href: "downloads/RBNT-Holder-Report-Q3-2026.pdf" },
+      { type: "PDF", title: "Full report", desc: "The complete report with charts and tables, A4.", href: "downloads/redbelly-holder.pdf" },
       { type: "MD", title: "Community summary", desc: "An X thread and a short version in paragraphs, ready to share.", href: "downloads/COMMUNITY_SUMMARY.md" },
       { type: "XLSX", title: "Data workbook", desc: "Every table behind the charts, plus a sources sheet.", href: "data/RBNT-Holder-Report-Q3-2026-data.xlsx" },
       { type: "ZIP", title: "Data as CSV", desc: "Ten CSV files, one per chart or table.", href: "data/RBNT-Holder-Report-Q3-2026-csv.zip" },

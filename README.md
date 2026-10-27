@@ -22,7 +22,7 @@
 
 <p align="center">
   <a href="https://redbelly-holder.vercel.app"><b>Read the report</b></a> &nbsp;|&nbsp;
-  <a href="public/downloads/RBNT-Holder-Report-Q3-2026.pdf"><b>PDF</b></a> &nbsp;|&nbsp;
+  <a href="public/downloads/redbelly-holder.pdf"><b>PDF</b></a> &nbsp;|&nbsp;
   <a href="COMMUNITY_SUMMARY.md"><b>Community summary</b></a> &nbsp;|&nbsp;
   <a href="public/data/"><b>Data</b></a> &nbsp;|&nbsp;
   <a href="METHOD.md"><b>Method</b></a>
@@ -79,7 +79,7 @@ A drop in holdings is reported as "reduced", not "sold": the chain shows that RB
 | Deliverable | Location |
 |---|---|
 | Report website with animated charts | [redbelly-holder.vercel.app](https://redbelly-holder.vercel.app), source in [`public/index.html`](public/index.html) |
-| Report as PDF (A4, with charts and tables) | [`public/downloads/RBNT-Holder-Report-Q3-2026.pdf`](public/downloads/RBNT-Holder-Report-Q3-2026.pdf) |
+| Report as PDF (A4, with charts and tables) | [`public/downloads/redbelly-holder.pdf`](public/downloads/redbelly-holder.pdf) |
 | Community summary (X thread and short version) | [`COMMUNITY_SUMMARY.md`](COMMUNITY_SUMMARY.md) |
 | Data behind every chart (spreadsheet) | [`public/data/RBNT-Holder-Report-Q3-2026-data.xlsx`](public/data/RBNT-Holder-Report-Q3-2026-data.xlsx) |
 | Data behind every chart (CSV, also zipped) | [`public/data/`](public/data/) |
