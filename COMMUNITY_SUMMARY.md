@@ -1,6 +1,6 @@
 # RBNT Holder Report, Q3 2026: community summary
 
-Period: 1 July to 30 September 2026 (UTC). Data verified 2026-10-27 06:50 UTC. Snapshot blocks 3,025,809 and 3,209,414.
+Period: 1 July to 30 September 2026 (UTC). Data verified 2026-10-27 08:58 UTC. Snapshot blocks 3,025,809 and 3,209,414.
 
 ## X thread
 

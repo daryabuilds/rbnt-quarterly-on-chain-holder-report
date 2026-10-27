@@ -183,7 +183,7 @@ def main():
                 ("staking", "Reddex staking pools", "Stakes plus reward funds in the two RBNT pools."),
                 ("wrapper", "Wrapped RBNT contract", "RBNT locked to back WRBNT one to one."),
                 ("exchange", "Labelled exchange wallets", "Exchange wallets labelled on Routescan."),
-                ("contract", "Other smart contracts", "Programs such as trading pools, vesting and multisig contracts. Not labelled."),
+                ("contract", "Other smart contracts", "Programs on the chain that hold RBNT. Not labelled."),
                 ("wallet", "Regular wallets", "Wallets controlled by a private key. Not labelled.")]
     loc = {k: [0] * K for k, _, _ in loc_keys}
     for a, v in native.items():

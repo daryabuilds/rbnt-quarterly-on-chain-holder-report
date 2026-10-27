@@ -3,6 +3,6 @@ Redbelly reserved wallets,The nine wallets listed on the DAO treasury page.,5974
 Reddex staking pools,Stakes plus reward funds in the two RBNT pools.,639062323,648689756,743787041,754776552
 Wrapped RBNT contract,RBNT locked to back WRBNT one to one.,1819066451,1805084452,1724810603,1736902022
 Labelled exchange wallets,Exchange wallets labelled on Routescan.,0,0,0,0
-Other smart contracts,"Programs such as trading pools, vesting and multisig contracts. Not labelled.",457621791,458524796,461813907,464053740
+Other smart contracts,Programs on the chain that hold RBNT. Not labelled.,457621791,458524796,461813907,464053740
 Regular wallets,Wallets controlled by a private key. Not labelled.,1109439182,1119570858,1109100858,1113269814
 Total supply,Sum of all balances,9999963171,9999963128,9999963139,9999963159

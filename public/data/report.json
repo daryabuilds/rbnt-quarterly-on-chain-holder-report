@@ -6,7 +6,7 @@
    "start_utc": "2026-07-01T00:00:00+00:00",
    "end_utc": "2026-09-30T23:59:59+00:00"
   },
-  "generated_utc": "2026-10-27 06:50 UTC",
+  "generated_utc": "2026-10-27 08:58 UTC",
   "snapshots": [
    {
     "key": "open",
@@ -131,7 +131,7 @@
   {
    "key": "contract",
    "label": "Other smart contracts",
-   "desc": "Programs such as trading pools, vesting and multisig contracts. Not labelled.",
+   "desc": "Programs on the chain that hold RBNT. Not labelled.",
    "rbnt": [
     457621791,
     458524796,
