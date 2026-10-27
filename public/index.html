@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RBNT Holder Report Q3 2026</title>
+<meta name="description" content="How RBNT holders behaved on Redbelly mainnet from 1 July to 30 September 2026: accumulation, selling, staking and how concentrated holdings are. Every figure is read from the chain.">
+<meta name="theme-color" content="#0c1317">
+<link rel="canonical" href="https://rbnt-quarterly-on-chain-holder-report.vercel.app/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="RBNT Holder Report, Q3 2026">
+<meta property="og:description" content="Accumulation, selling, staking and concentration among RBNT holders, read from Redbelly mainnet.">
+<meta property="og:url" content="https://rbnt-quarterly-on-chain-holder-report.vercel.app/">
+<meta property="og:image" content="https://rbnt-quarterly-on-chain-holder-report.vercel.app/assets/img/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="assets/img/favicon-64.png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/site.css">
+<script>
+  (function () {
+    try {
+      var t = localStorage.getItem("rbnt-theme");
+      if (/[?&]print=1/.test(location.search)) t = "light";
+      if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+    } catch (e) {}
+  })();
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to the report</a>
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand-link" href="#top" aria-label="Redbelly DAO, back to top">
+      <img class="logo-dark" src="assets/img/dao-logo-on-dark-160.png" alt="Redbelly DAO" width="56" height="40">
+      <img class="logo-light" src="assets/img/dao-logo-on-light-160.png" alt="Redbelly DAO" width="56" height="40">
+      <span>Holder report<br>Q3 2026</span>
+    </a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#summary">Summary</a>
+      <a href="#where">Where RBNT sits</a>
+      <a href="#spread">Spread</a>
+      <a href="#largest">Largest holders</a>
+      <a href="#staking">Staking</a>
+      <a href="#named">Named wallets</a>
+      <a href="#method">Method</a>
+    </nav>
+    <div class="header-actions">
+      <button class="btn btn-ghost btn-icon theme-toggle" id="theme-toggle" type="button" aria-label="Switch to light theme">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2.5v2M12 19.5v2M4.6 4.6l1.4 1.4M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4L6 18M18 6l1.4-1.4"/></svg>
+      </button>
+      <a class="btn btn-primary btn-hide-sm" href="downloads/RBNT-Holder-Report-Q3-2026.pdf" download>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 21h16"/></svg>
+        PDF
+      </a>
+    </div>
+  </div>
+</header>
+
+<div class="hero" id="top">
+  <canvas id="net" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <p class="eyebrow h-in">Quarterly on-chain holder report</p>
+    <h1 class="h-in d1">How RBNT holders moved in <span class="accent">Q3 2026</span></h1>
+    <p class="lede h-in d2" id="hero-lede">A calm, sourced picture of accumulation, selling, staking and concentration on Redbelly mainnet, from 1 July to 30 September 2026. Every figure is read from the chain.</p>
+    <ul class="hero-meta h-in d3" id="hero-meta"></ul>
+    <div class="hero-actions h-in d3">
+      <a class="btn btn-primary" href="downloads/RBNT-Holder-Report-Q3-2026.pdf" download>Download the PDF</a>
+      <a class="btn btn-ghost" href="#downloads">Get the data</a>
+      <a class="btn btn-ghost" href="#glossary">New to crypto? Start here</a>
+    </div>
+    <div class="kpis h-in d4" id="kpis"></div>
+  </div>
+</div>
+
+<main id="main">
+  <section id="summary">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="eyebrow">The quarter in brief</p>
+        <h2>What happened, in plain words</h2>
+        <p>Each point links to the chart and the numbers behind it. Trends are described as they happened on chain. Nothing here predicts prices or suggests buying or selling.</p>
+      </div>
+      <div class="findings" id="findings"></div>
+    </div>
+  </section>
+
+  <section id="where">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="eyebrow">Supply map</p>
+        <h2>Where RBNT sits</h2>
+        <p id="where-lede"></p>
+      </div>
+      <div class="card reveal" id="card-where"></div>
+      <div class="explain reveal" id="explain-where"></div>
+    </div>
+  </section>
+
+  <section id="spread">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="eyebrow">Distribution</p>
+        <h2>How spread out holdings are</h2>
+        <p id="spread-lede"></p>
+      </div>
+      <div class="stats four reveal" id="conc-stats"></div>
+      <div class="grid-2" style="margin-top:24px">
+        <div class="card reveal" id="card-holders"></div>
+        <div class="card reveal" data-delay="1" id="card-bands"></div>
+      </div>
+      <div class="explain reveal" id="explain-spread"></div>
+    </div>
+  </section>
+
+  <section id="largest">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="eyebrow">Accumulation and selling</p>
+        <h2>What the largest holders did</h2>
+        <p id="largest-lede"></p>
+      </div>
+      <div class="grid-2">
+        <div class="card reveal" id="card-cohort-count"></div>
+        <div class="card reveal" data-delay="1" id="card-cohort-net"></div>
+      </div>
+      <div class="stats three reveal" id="entrant-stats" style="margin-top:24px"></div>
+      <div class="explain reveal" id="explain-largest"></div>
+    </div>
+  </section>
+
+  <section id="staking">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="eyebrow">Reddex staking pools</p>
+        <h2>Staking</h2>
+        <p id="staking-lede"></p>
+      </div>
+      <div class="stats four reveal" id="staking-stats"></div>
+      <div class="grid-2" style="margin-top:24px" id="pool-cards"></div>
+      <div class="card reveal" id="card-stake-flows" style="margin-top:24px"></div>
+      <div class="explain reveal" id="explain-staking"></div>
+    </div>
+  </section>
+
+  <section id="named">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="eyebrow">Publicly named wallets</p>
+        <h2>Reserved wallets, WRBNT and exchanges</h2>
+        <p id="named-lede"></p>
+      </div>
+      <div class="card reveal" id="card-named"></div>
+      <div class="card reveal" id="card-named-flows" style="margin-top:24px"></div>
+      <div class="grid-2" style="margin-top:24px">
+        <div class="card reveal" id="card-wrbnt"></div>
+        <div class="card reveal" data-delay="1" id="card-exchanges"></div>
+      </div>
+      <div class="explain reveal" id="explain-named"></div>
+    </div>
+  </section>
+
+  <section id="activity">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="eyebrow">Context</p>
+        <h2>Network activity in the quarter</h2>
+        <p>Background figures that help read the holder trends above.</p>
+      </div>
+      <div class="stats three reveal" id="activity-stats"></div>
+    </div>
+  </section>
+
+  <section id="method">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="eyebrow">Method and sources</p>
+        <h2>How this report was made</h2>
+        <p>The full method, with every script, is in <a href="downloads/METHOD.md">METHOD.md</a>. Anyone can rerun it for the next quarter by changing one setting.</p>
+      </div>
+      <ol class="steps reveal" id="method-steps"></ol>
+      <div class="card reveal" id="card-checks" style="margin-top:24px"></div>
+      <div class="card reveal" id="card-sources" style="margin-top:24px"></div>
+    </div>
+  </section>
+
+  <section id="glossary">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="eyebrow">New to crypto</p>
+        <h2>Words used in this report</h2>
+        <p>Short definitions, in the order you will meet them.</p>
+      </div>
+      <dl class="glossary reveal" id="glossary-list"></dl>
+    </div>
+  </section>
+
+  <section id="downloads" class="no-print-break">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="eyebrow">Downloads</p>
+        <h2>Report, summary and data</h2>
+        <p>Everything below is free to share. The data files list totals for groups of wallets, never single unlabelled wallets.</p>
+      </div>
+      <div class="downloads reveal" id="download-list"></div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>
+      <img class="logo-dark" src="assets/img/dao-logo-on-dark-160.png" alt="Redbelly DAO" width="78" height="56">
+      <img class="logo-light" src="assets/img/dao-logo-on-light-160.png" alt="Redbelly DAO" width="78" height="56">
+    </div>
+    <div id="footer-text"></div>
+  </div>
+</footer>
+
+<script src="data/report.js"></script>
+<script src="assets/js/copy.js"></script>
+<script src="assets/js/charts.js"></script>
+<script src="assets/js/network.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>
