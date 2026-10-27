@@ -90,14 +90,24 @@ a:hover { text-decoration-thickness: 2px; }
   font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--outline);
   border-left: 1px solid var(--outline-variant); padding-left: 12px; line-height: 1.2;
 }
-.nav { display: none; gap: 4px; margin-left: auto; }
+.nav { display: none; gap: 4px; margin-left: auto; position: relative; }
 .nav a {
+  position: relative; z-index: 1;
   color: var(--on-surface-variant); text-decoration: none; font-size: 14px; font-weight: 500;
   padding: 8px 10px; border-radius: var(--radius-base);
-  transition: color var(--t-fast), background var(--t-fast);
+  transition: color 0.3s var(--ease);
 }
-.nav a:hover, .nav a[aria-current="true"] { color: var(--on-surface); background: var(--surface-container); }
-.nav a[aria-current="true"] { box-shadow: inset 0 -2px 0 var(--brand); }
+.nav a:hover, .nav a[aria-current="true"] { color: var(--on-surface); }
+/* One highlight that slides between tabs instead of each tab lighting up in turn */
+.nav-indicator {
+  position: absolute; top: 0; left: 0; height: 100%; width: 0; z-index: 0; pointer-events: none;
+  border-radius: var(--radius-base);
+  background: var(--surface-container);
+  box-shadow: inset 0 -2px 0 var(--brand);
+  opacity: 0;
+  transition: transform 0.55s var(--ease), width 0.55s var(--ease), opacity 0.25s var(--ease);
+}
+.nav-indicator.no-anim { transition: none; }
 .header-actions { display: flex; align-items: center; gap: 8px; margin-left: auto; }
 @media (min-width: 1180px) {
   .nav { display: flex; }
@@ -402,6 +412,7 @@ table.data .addr a { color: var(--primary); }
   .chart .grow { transform: none !important; }
   .chart .fade { opacity: 1 !important; }
   .finding, .dl, .btn { transition: none; }
+  .nav-indicator { transition: opacity 0.2s; }
 }
 
 /* Print, used for the PDF edition */

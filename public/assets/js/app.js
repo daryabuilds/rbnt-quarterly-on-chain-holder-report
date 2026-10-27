@@ -389,19 +389,65 @@
     var ro = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("in"); ro.unobserve(e.target); } }); }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
     reveals.forEach(function (n) { ro.observe(n); });
   }
+  /* Section tabs: one highlight slides to the current tab. When a tab is
+     clicked it moves straight there, and the scroll tracker waits until the
+     page stops scrolling so it does not step through every tab on the way. */
   var links = Array.prototype.slice.call(document.querySelectorAll(".nav a"));
   var secs = links.map(function (a) { return document.querySelector(a.getAttribute("href")); });
-  function onScroll() {
+  var ind = document.querySelector(".nav-indicator");
+  var current = -2, jumping = false, settleTimer = 0;
+  function place(i) {
+    if (!ind) return;
+    var a = links[i];
+    if (!a || !a.offsetWidth) { ind.style.opacity = "0"; return; }
+    var hidden = ind.style.opacity !== "1";
+    if (hidden) ind.classList.add("no-anim");
+    ind.style.width = a.offsetWidth + "px";
+    ind.style.transform = "translateX(" + a.offsetLeft + "px)";
+    if (hidden) { void ind.offsetWidth; ind.classList.remove("no-anim"); }
+    ind.style.opacity = "1";
+  }
+  function setCurrent(i) {
+    if (i === current) return;
+    current = i;
+    links.forEach(function (a, k) { if (k === i) a.setAttribute("aria-current", "true"); else a.removeAttribute("aria-current"); });
+    place(i);
+  }
+  function spy() {
     var y = window.scrollY + 120, cur = -1;
     secs.forEach(function (s, i) { if (s && s.offsetTop <= y) cur = i; });
-    links.forEach(function (a, i) { if (i === cur) a.setAttribute("aria-current", "true"); else a.removeAttribute("aria-current"); });
+    return cur;
   }
+  function onScroll() {
+    if (jumping) {
+      clearTimeout(settleTimer);
+      settleTimer = setTimeout(function () { jumping = false; setCurrent(spy()); }, 140);
+      return;
+    }
+    setCurrent(spy());
+  }
+  links.forEach(function (a, i) {
+    a.addEventListener("click", function (e) {
+      if (!secs[i]) return;
+      e.preventDefault();
+      jumping = true;
+      setCurrent(i);
+      secs[i].scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
+      history.replaceState(null, "", a.getAttribute("href"));
+      clearTimeout(settleTimer);
+      settleTimer = setTimeout(function () { jumping = false; setCurrent(spy()); }, 1600);
+    });
+  });
   window.addEventListener("scroll", onScroll, { passive: true });
-  onScroll();
+  window.addEventListener("resize", function () { place(current); });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { place(current); });
+  setCurrent(spy());
 
   /* Logo goes back to the top without adding a hash to the address */
   $("brand-link").addEventListener("click", function (e) {
     e.preventDefault();
+    jumping = true;
+    setCurrent(-1);
     window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" });
     if (location.hash) history.replaceState(null, "", location.pathname + location.search);
   });
