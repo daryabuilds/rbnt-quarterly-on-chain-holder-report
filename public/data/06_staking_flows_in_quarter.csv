@@ -1,0 +1,9 @@
+pool,flow,events,RBNT
+"Reddex RBNT staking pool, no lock",staked,262,132965677
+"Reddex RBNT staking pool, no lock",unstaked,102,50895283
+"Reddex RBNT staking pool, no lock",rewards claimed,512,4436787
+"Reddex RBNT staking pool, no lock",reward funding from Ecosystem (Unlocked),,5000000
+"Reddex RBNT staking pool, 365 day lock",staked,227,63401240
+"Reddex RBNT staking pool, 365 day lock",unstaked,51,29983775
+"Reddex RBNT staking pool, 365 day lock",rewards claimed,523,10336843
+"Reddex RBNT staking pool, 365 day lock",reward funding from Ecosystem (Unlocked),,10000000

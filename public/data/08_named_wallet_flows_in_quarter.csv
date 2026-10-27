@@ -1,0 +1,23 @@
+named wallet,direction,"counterparty (named, or grouped)",asset,amount,transfers
+Governance (Locked),out,Governance (Unlocked),RBNT,33333333,1
+Governance (Unlocked),in,Governance (Locked),RBNT,33333333,1
+Investors,in,Ecosystem 2 (Unlocked),RBNT,253115670,1
+Ecosystem (Locked),out,Ecosystem 2 (Unlocked),RBNT,500000000,1
+Ecosystem 2 (Unlocked),in,Ecosystem (Locked),RBNT,500000000,1
+Ecosystem 2 (Unlocked),out,Investors,RBNT,253115670,1
+Ecosystem (Unlocked),out,"Other addresses, not named",WRBNT,34720848,4
+Ecosystem (Unlocked),out,Wrapped RBNT (WRBNT) contract,RBNT,25100000,2
+Ecosystem (Unlocked),in,Wrapping its own RBNT,WRBNT,25100000,2
+Ecosystem (Unlocked),out,"Reddex RBNT staking pool, 365 day lock",RBNT,10000000,2
+Ecosystem (Unlocked),in,"Other addresses, not named",WRBNT,9613167,1
+Ecosystem (Unlocked),out,"Reddex RBNT staking pool, no lock",RBNT,5000000,3
+Ecosystem (Unlocked),out,"Other addresses, not named",RBNT,3696669,24
+Wrapped RBNT (WRBNT) contract,out,"Other addresses, not named",RBNT,120839204,1268
+Wrapped RBNT (WRBNT) contract,in,Ecosystem (Unlocked),RBNT,25100000,2
+Wrapped RBNT (WRBNT) contract,in,"Other addresses, not named",RBNT,13574776,238
+"Reddex RBNT staking pool, no lock",in,"Other addresses, not named",RBNT,132965677,262
+"Reddex RBNT staking pool, no lock",out,"Other addresses, not named",RBNT,55332070,614
+"Reddex RBNT staking pool, no lock",in,Ecosystem (Unlocked),RBNT,5000000,3
+"Reddex RBNT staking pool, 365 day lock",in,"Other addresses, not named",RBNT,63401240,227
+"Reddex RBNT staking pool, 365 day lock",out,"Other addresses, not named",RBNT,40320618,574
+"Reddex RBNT staking pool, 365 day lock",in,Ecosystem (Unlocked),RBNT,10000000,2
