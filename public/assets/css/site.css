@@ -71,13 +71,6 @@ a:hover { text-decoration-thickness: 2px; }
 }
 .skip:focus { left: 8px; }
 
-/* Reading progress */
-.progress {
-  position: fixed; top: 0; left: 0; height: 2px; width: 100%;
-  background: var(--brand); transform-origin: 0 50%; transform: scaleX(0);
-  z-index: 60; pointer-events: none;
-}
-
 /* Header */
 .site-header {
   position: sticky; top: 0; z-index: 50;
@@ -89,7 +82,7 @@ a:hover { text-decoration-thickness: 2px; }
 }
 .site-header .wrap { height: 100%; display: flex; align-items: center; gap: 24px; }
 .brand-link { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--on-surface); flex: none; }
-.brand-link img { height: 40px; width: auto; }
+.brand-link img { height: 36px; width: auto; }
 .brand-link .logo-light { display: none; }
 [data-theme="light"] .brand-link .logo-dark { display: none; }
 [data-theme="light"] .brand-link .logo-light { display: block; }
@@ -110,6 +103,7 @@ a:hover { text-decoration-thickness: 2px; }
   .nav { display: flex; }
   .header-actions { margin-left: 8px; }
 }
+@media (max-width: 520px) { .brand-link span { display: none; } }
 
 .btn {
   display: inline-flex; align-items: center; justify-content: center; gap: 8px;
@@ -360,7 +354,7 @@ table.data .addr a { color: var(--primary); }
 [data-theme="light"] .site-footer { background: var(--surface-container); }
 .site-footer .wrap { display: grid; gap: 24px; }
 @media (min-width: 900px) { .site-footer .wrap { grid-template-columns: 1fr 2fr; } }
-.site-footer img { height: 56px; width: auto; }
+.site-footer img { height: 50px; width: auto; }
 .site-footer .logo-light { display: none; }
 [data-theme="light"] .site-footer .logo-dark { display: none; }
 [data-theme="light"] .site-footer .logo-light { display: block; }
@@ -405,7 +399,7 @@ table.data .addr a { color: var(--primary); }
   @page { size: A4; margin: 14mm 12mm 16mm; }
   html { scroll-behavior: auto; }
   body { background: #fff; font-size: 11pt; }
-  .site-header, .progress, .hero canvas, .hero-actions, .toggle-table, .skip, .no-print, .theme-toggle { display: none !important; }
+  .site-header, .hero canvas, .hero-actions, .toggle-table, .skip, .no-print, .theme-toggle { display: none !important; }
   .reveal, .hero .h-in { opacity: 1 !important; transform: none !important; animation: none !important; transition: none !important; }
   .chart .grow { transform: none !important; transition: none !important; }
   .chart .fade { opacity: 1 !important; transition: none !important; }

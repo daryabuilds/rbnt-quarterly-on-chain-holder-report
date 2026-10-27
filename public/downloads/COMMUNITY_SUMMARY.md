@@ -6,7 +6,7 @@ Period: 1 July to 30 September 2026 (UTC). Data verified 2026-10-27 06:50 UTC. S
 
 **1/8**
 
-RBNT Holder Report, Q3 2026 (1 July to 30 September). A sourced look at how RBNT holders behaved on Redbelly mainnet. Every figure is read from the chain at fixed blocks. Report, data and method: https://rbnt-quarterly-on-chain-holder-report.vercel.app
+RBNT Holder Report, Q3 2026 (1 July to 30 September). A sourced look at how RBNT holders behaved on Redbelly mainnet. Every figure is read from the chain at fixed blocks. Report, data and method: https://redbelly-holder.vercel.app
 
 **2/8**
 
@@ -44,4 +44,4 @@ Redbelly DAO's first quarterly on-chain holder report covers Q3 2026, from 1 Jul
 
 Staking in the two Reddex pools went from 635.8 million to 751.3 million RBNT, held by 1,255 wallets at the end of the quarter, and the pools paid out 14.8 million RBNT in rewards. The nine reserved wallets on the DAO treasury page held 5.93 billion RBNT on 30 September, against 5.97 billion on 1 July. Most of their activity was between themselves (786.4 million RBNT), and 43.8 million RBNT left the group. 1.74 billion RBNT sat wrapped as WRBNT, fully backed at every snapshot.
 
-The report names only wallets that are already public: the treasury wallets, the WRBNT contract and the two staking pools. Every other address is reported in groups. All figures, the method and the scripts are open, so anyone can check them or produce the next edition. This is a description of past on-chain activity, not financial advice. Full report: https://rbnt-quarterly-on-chain-holder-report.vercel.app
+The report names only wallets that are already public: the treasury wallets, the WRBNT contract and the two staking pools. Every other address is reported in groups. All figures, the method and the scripts are open, so anyone can check them or produce the next edition. This is a description of past on-chain activity, not financial advice. Full report: https://redbelly-holder.vercel.app

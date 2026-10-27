@@ -9,7 +9,7 @@
 
   var S = R.meta.snapshots, K = S.length, LAST = K - 1;
   var PRINT = /[?&]print=1/.test(location.search);
-  var SITE = "https://rbnt-quarterly-on-chain-holder-report.vercel.app/";
+  var SITE = "https://redbelly-holder.vercel.app/";
   function link(href) { return PRINT && !/^(https?:|#)/.test(href) ? SITE + href : href; }
   var OPEN = S[0], CLOSE = S[LAST];
   var css = getComputedStyle(document.documentElement);
@@ -389,18 +389,22 @@
     var ro = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("in"); ro.unobserve(e.target); } }); }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
     reveals.forEach(function (n) { ro.observe(n); });
   }
-  var bar = $("progress");
   var links = Array.prototype.slice.call(document.querySelectorAll(".nav a"));
   var secs = links.map(function (a) { return document.querySelector(a.getAttribute("href")); });
   function onScroll() {
-    var d = document.documentElement, max = d.scrollHeight - d.clientHeight;
-    bar.style.transform = "scaleX(" + (max > 0 ? d.scrollTop / max : 0) + ")";
     var y = window.scrollY + 120, cur = -1;
     secs.forEach(function (s, i) { if (s && s.offsetTop <= y) cur = i; });
     links.forEach(function (a, i) { if (i === cur) a.setAttribute("aria-current", "true"); else a.removeAttribute("aria-current"); });
   }
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
+
+  /* Logo goes back to the top without adding a hash to the address */
+  $("brand-link").addEventListener("click", function (e) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" });
+    if (location.hash) history.replaceState(null, "", location.pathname + location.search);
+  });
 
   /* ---------- theme ---------- */
   var tbtn = $("theme-toggle");

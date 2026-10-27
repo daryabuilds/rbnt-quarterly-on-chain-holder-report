@@ -6,7 +6,7 @@ Voice rules (brand kit): plain words, say the number, no em or en dashes,
 no emoji, no price talk, no advice.
 """
 
-SITE = "https://rbnt-quarterly-on-chain-holder-report.vercel.app"
+SITE = "https://redbelly-holder.vercel.app"
 
 
 def build(rep, f):
