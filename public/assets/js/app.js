@@ -209,8 +209,8 @@
       fmt: function (v) { return pct(v, v > 0 && v < 0.01 ? 2 : 1); }, valueW: 60, barH: 10
     });
     c2.root.insertBefore(c2.table, c2.root.lastChild);
-    table(c2.table, "Holders and RBNT by balance band", ["Band (RBNT)", "Holders 1 Jul", "Holders 30 Sep", "RBNT 1 Jul", "RBNT 30 Sep", "Share of RBNT 1 Jul", "Share of RBNT 30 Sep"],
-      hold.bands.map(function (b) { return [b.label, F.full(b.holders[0]), F.full(b.holders[LAST]), F.full(b.rbnt[0]), F.full(b.rbnt[LAST]), pct(b.share[0]), pct(b.share[LAST])]; }));
+    table(c2.table, "Holders and RBNT by balance band. RBNT per band on 1 July is in 02_holders_by_balance_band.csv.", ["Band (RBNT)", "Holders 1 Jul", "Holders 30 Sep", "Share 1 Jul", "Share 30 Sep", "RBNT 30 Sep"],
+      hold.bands.map(function (b) { return [b.label, F.full(b.holders[0]), F.full(b.holders[LAST]), pct(b.share[0], b.share[0] < 0.01 ? 2 : 1), pct(b.share[LAST], b.share[LAST] < 0.01 ? 2 : 1), F.full(b.rbnt[LAST])]; }));
   })();
 
   /* ---------- largest holders ---------- */

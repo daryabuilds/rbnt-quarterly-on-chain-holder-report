@@ -190,7 +190,7 @@ main section:last-of-type { border-bottom: 0; }
 .prose p, .prose li { font-size: 16px; line-height: 1.6; color: var(--on-surface-variant); }
 .prose strong { color: var(--on-surface); }
 
-.grid-2 { display: grid; gap: 24px; }
+.grid-2 { display: grid; gap: 24px; align-items: start; } /* each card keeps its own height */
 @media (min-width: 1000px) { .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 .grid-3 { display: grid; gap: 16px; }
 @media (min-width: 760px) { .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
@@ -291,6 +291,15 @@ table.data { width: 100%; border-collapse: collapse; font-size: 14px; }
 table.data caption { text-align: left; font-size: 13px; color: var(--outline); padding: 0 0 8px; }
 table.data th, table.data td { padding: 10px 12px; text-align: right; border-bottom: 1px solid var(--surface-container-high); white-space: nowrap; }
 table.data th:first-child, table.data td:first-child { text-align: left; white-space: normal; min-width: 160px; }
+table.data thead th { white-space: normal; vertical-align: bottom; }
+/* half-width cards on screen: tighter tables so they fit without a sideways scroll */
+@media screen {
+  .grid-2 table.data { font-size: 12.5px; }
+  .grid-2 table.data th, .grid-2 table.data td { padding: 9px 5px; }
+  .grid-2 table.data th:first-child, .grid-2 table.data td:first-child { min-width: 84px; padding-left: 0; }
+  .grid-2 table.data th:last-child, .grid-2 table.data td:last-child { padding-right: 0; }
+  .card > .table-view { margin-top: 0; padding: 4px 20px 16px; }
+}
 table.data thead th { font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--outline); border-bottom: 1px solid var(--outline-variant); }
 table.data td { font-variant-numeric: tabular-nums; color: var(--on-surface-variant); }
 table.data.left th, table.data.left td { text-align: left; }
@@ -303,6 +312,7 @@ table.data .addr { font-size: 12px; color: var(--outline); }
 table.data .addr a { color: var(--primary); }
 .table-view[hidden] { display: none; }
 .table-view { margin-top: 16px; }
+.card > .table-view table.data caption { padding-top: 8px; }
 
 .delta-up, .delta-down, .delta-flat { font-variant-numeric: tabular-nums; }
 .pill {
